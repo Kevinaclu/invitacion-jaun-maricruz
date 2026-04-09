@@ -137,6 +137,6 @@ export const giftInfo = {
 export const meta = {
   title: `Nuestra Boda | ${couple.groomName} & ${couple.brideName}`,
   description: `Invitacion de boda de ${couple.groomName} y ${couple.brideName}`,
-  ogImage: "/img/IMG_1661.webp",
+  ogImage: "/img/og-image.jpg",
   siteUrl: "https://invitacion-juan-maricruz.vercel.app",
 };
