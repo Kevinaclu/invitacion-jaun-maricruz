@@ -18,6 +18,7 @@
     "@fontsource/great-vibes": "^5.1.1",
     "@sveltejs/svelte-scroller": "^2.0.7",
     "astro": "^6.0.0",
+    "autoprefixer": "^10.4.27",
     "photoswipe": "^5.4.4",
     "svelte": "^5.43.6",
     "svelte-carousel": "^1.0.25",
