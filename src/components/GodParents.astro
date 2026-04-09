@@ -1,0 +1,41 @@
+---
+import GodParentsCarousel from "./GodParentsCarousel.svelte";
+import { colors } from "../config/wedding";
+---
+
+<div class="z-40 relative overflow-hidden" style={`background-color: ${colors.primary}`}>
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20.5z\' fill=\'%23ffffff\' fill-opacity=\'0.08\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+  </div>
+  <div class="relative z-10 py-6 sm:py-8 px-6">
+    <p class="text-center text-white font-cormorant text-lg sm:text-xl tracking-wider leading-relaxed max-w-xl mx-auto">
+      Compartir estos momentos con ustedes los hace inolvidables
+    </p>
+  </div>
+</div>
+
+<div class="z-40 relative texture-overlay" style={`background-color: ${colors.bgWarm}`}>
+  <div class="relative z-10 pt-14 sm:pt-16 pb-6">
+    <div class="max-w-lg mx-auto text-center">
+      <p class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3" style={`color: ${colors.textMuted}`}>
+        Acompanados por
+      </p>
+      <h1
+        class="text-center font-greatVibes text-6xl sm:text-7xl intersect:motion-preset-fade-sm intersect-once"
+        style={`color: ${colors.primary}`}
+      >
+        Padrinos
+      </h1>
+      <div class="divider-line"></div>
+    </div>
+    <GodParentsCarousel client:only="svelte" />
+  </div>
+</div>
+
+<div class="z-40 relative overflow-hidden" style={`background-color: ${colors.primary}`}>
+  <div class="relative z-10 py-6 sm:py-8 px-6">
+    <p class="text-center text-white font-cormorant text-lg sm:text-xl tracking-wider leading-relaxed max-w-xl mx-auto">
+      Tenemos el honor de compartir la belleza del amor en celebracion de nuestra boda
+    </p>
+  </div>
+</div>

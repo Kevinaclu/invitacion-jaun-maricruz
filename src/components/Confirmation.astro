@@ -1,0 +1,159 @@
+---
+import { colors } from "../config/wedding";
+---
+
+<style
+  define:vars={{
+    colorPrimary: colors.primary,
+    colorPrimaryLight: colors.primaryLight,
+    colorBgWarm: colors.bgWarm,
+  }}
+>
+  .form-input {
+    border: 1px solid rgba(184, 134, 11, 0.25);
+    background-color: var(--colorBgWarm);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+  }
+
+  .form-input:focus {
+    border-color: var(--colorPrimary);
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.08);
+  }
+
+  .radio-custom {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--colorPrimaryLight);
+    border-radius: 50%;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .radio-custom:checked {
+    border-color: var(--colorPrimary);
+  }
+
+  .radio-custom:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--colorPrimary);
+    border-radius: 50%;
+  }
+</style>
+
+<section
+  class="texture-overlay relative"
+  style={`background-color: ${colors.bgWarm}`}
+>
+  <div class="relative z-10 flex flex-col items-center py-16 sm:py-20 px-6">
+    <div class="max-w-md w-full">
+      <div class="text-center mb-10">
+        <p
+          class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3"
+          style={`color: ${colors.textMuted}`}
+        >
+          RSVP
+        </p>
+        <p class="font-greatVibes text-4xl sm:text-5xl" style={`color: ${colors.primary}`}>
+          Confirma tu asistencia
+        </p>
+        <div class="divider-line"></div>
+        <p class="font-cormorant text-lg mt-2" style={`color: ${colors.textMuted}`}>
+          Te esperamos
+        </p>
+      </div>
+
+      <form class="flex flex-col gap-6">
+        <div>
+          <label class="font-raleway text-xs tracking-[0.25em] uppercase mb-2 block" style={`color: ${colors.textMuted}`}>
+            Nombre
+          </label>
+          <input
+            type="text"
+            placeholder="Tu nombre"
+            name="nombre"
+            class="w-full p-4 rounded-sm font-raleway text-sm form-input"
+          />
+        </div>
+
+        <div>
+          <label class="font-raleway text-xs tracking-[0.25em] uppercase mb-3 block" style={`color: ${colors.textMuted}`}>
+            Asistencia
+          </label>
+          <div class="flex gap-6 items-center">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="asistir"
+                id="asistire"
+                value="true"
+                checked
+                class="radio-custom"
+              />
+              <span class="font-cormorant text-lg" style={`color: ${colors.textDark}`}>Asistire</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="asistir" id="no-asistire" value="false" class="radio-custom" />
+              <span class="font-cormorant text-lg" style={`color: ${colors.textDark}`}>No asistire</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="font-raleway text-xs tracking-[0.25em] uppercase mb-2 block" style={`color: ${colors.textMuted}`}>
+            Mensaje
+          </label>
+          <textarea
+            class="w-full p-4 rounded-sm font-raleway text-sm form-input resize-none"
+            rows="5"
+            name="mensaje"
+            id="mensaje"
+            placeholder="Dejale un mensaje a los novios!"
+          ></textarea>
+        </div>
+
+        <input
+          type="submit"
+          value="Enviar"
+          class="font-raleway text-xs tracking-[0.2em] uppercase px-8 py-3.5 rounded-full shadow-md active:scale-[0.98] transition-all duration-300 cursor-pointer text-white hover:shadow-lg mt-2"
+          style={`background-color: ${colors.primary}`}
+        />
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const submitButton = document.querySelector(
+    'input[type="submit"]'
+  ) as HTMLButtonElement;
+
+  submitButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    submitButton.value = "Enviando...";
+    submitButton.disabled = true;
+
+    const form = document.querySelector("form") as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const response = await fetch("/api/comment", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.text();
+
+    if (data === "Comentario guardado") {
+      submitButton.value = "Gracias por tu confirmacion!";
+      submitButton.disabled = true;
+    }
+  });
+</script>

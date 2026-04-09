@@ -1,0 +1,115 @@
+---
+import { colors, couple } from "../config/wedding";
+---
+
+<style
+  define:vars={{
+    colorPrimary: colors.primary,
+    colorPrimaryDark: colors.primaryDark,
+    colorPrimaryLight: colors.primaryLight,
+    colorAccent: colors.accent,
+    colorBgWarm: colors.bgWarm,
+  }}
+>
+  .envelope-button {
+    background: radial-gradient(
+      ellipse at 30% 30%,
+      var(--colorAccent),
+      var(--colorPrimary) 50%,
+      var(--colorPrimaryDark) 100%
+    );
+    border: 2px solid var(--colorPrimaryLight);
+    cursor: pointer;
+    box-shadow:
+      0 0 25px rgba(212, 168, 67, 0.4),
+      0 0 50px rgba(212, 168, 67, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .envelope-panel {
+    background-color: var(--colorBgWarm);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(184, 134, 11, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(184, 134, 11, 0.04) 0%, transparent 50%);
+  }
+
+  .envelope-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8860B' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .intro-label {
+    font-family: "Cormorant Garamond Variable", serif;
+    color: var(--colorPrimary);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+</style>
+
+<audio id="audio" src="/mp3/song.mp3" loop></audio>
+<div id="wrapper" class="fixed w-screen h-screen z-50 overflow-hidden">
+  <div class="w-full h-full relative">
+    <!-- Left panel -->
+    <div
+      id="letter-left"
+      class="absolute top-0 left-0 w-1/2 h-full border-r border-double transition-all duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)] envelope-panel"
+      style={`border-color: ${colors.primaryLight}`}
+    >
+      <div class="absolute top-8 left-8 opacity-[0.08]">
+        <svg width="80" height="80" viewBox="0 0 100 100">
+          <path d="M50 10 C60 30, 90 30, 90 50 C90 75, 50 95, 50 95 C50 95, 10 75, 10 50 C10 30, 40 30, 50 10Z" fill={colors.primary} />
+        </svg>
+      </div>
+    </div>
+    <!-- Right panel -->
+    <div
+      id="letter-rigth"
+      class="absolute top-0 left-1/2 w-1/2 h-full border-l border-double transition-all duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)] envelope-panel"
+      style={`border-color: ${colors.primaryLight}`}
+    >
+      <div class="absolute bottom-8 right-8 opacity-[0.08] rotate-180">
+        <svg width="80" height="80" viewBox="0 0 100 100">
+          <path d="M50 10 C60 30, 90 30, 90 50 C90 75, 50 95, 50 95 C50 95, 10 75, 10 50 C10 30, 40 30, 50 10Z" fill={colors.primary} />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Center content -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-5 z-10">
+      <span class="intro-label">Nuestra Boda</span>
+      <button
+        id="entry-point"
+        class="w-28 h-28 animate-shimmer rounded-full font-greatVibes text-2xl text-white tracking-wide envelope-button transition-transform duration-300 hover:scale-105"
+      >{couple.initials}</button>
+      <span class="intro-label">Abrir invitacion</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("entry-point")?.addEventListener("click", () => {
+    document
+      .getElementById("letter-rigth")
+      ?.classList.toggle("translate-x-full");
+    document
+      .getElementById("letter-left")
+      ?.classList.toggle("-translate-x-full");
+
+    document
+      .getElementById("entry-point")
+      ?.parentElement?.classList.add("opacity-0", "scale-75", "transition-all", "duration-700");
+
+    (document.getElementById("audio") as HTMLAudioElement)?.play();
+    setTimeout(() => {
+      document.getElementById("wrapper")?.remove();
+    }, 1200);
+
+    document.getElementById("hero-title")?.classList.add("motion-preset-fade");
+
+    document.body.classList.add("overflow-y-scroll");
+  });
+</script>

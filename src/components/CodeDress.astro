@@ -1,0 +1,46 @@
+---
+import { colors, dressCode } from "../config/wedding";
+---
+
+<section class="texture-overlay relative z-40" style={`background-color: ${colors.bgWarm}`}>
+  <div class="relative z-10 text-center py-14 sm:py-16 px-6">
+    <p class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3" style={`color: ${colors.textMuted}`}>
+      Etiqueta
+    </p>
+    <h3
+      class="text-5xl sm:text-6xl font-greatVibes intersect:motion-preset-fade-sm intersect-once"
+      style={`color: ${colors.primary}`}
+    >
+      Codigo de vestimenta
+    </h3>
+    <div class="divider-line"></div>
+
+    <div class="flex items-center flex-col gap-4 mt-8 max-w-sm mx-auto">
+      <img
+        src="/img/vestimenta.png"
+        alt="Imagen que indica el codigo de vestimenta formal"
+        width={260}
+        height={260}
+        class="opacity-90"
+        onerror="this.style.display='none'"
+      />
+      <p
+        class="text-3xl font-cormorant tracking-[0.2em] uppercase font-light mt-2"
+        style={`color: ${colors.textDark}`}
+      >
+        {dressCode.type}
+      </p>
+
+      <div class="w-10 h-[1px] opacity-40 my-2" style={`background-color: ${colors.primaryLight}`}></div>
+
+      {dressCode.restrictions.map((restriction) => (
+        <p
+          class="font-cormorant text-lg sm:text-xl leading-relaxed"
+          style={`color: ${colors.textMuted}`}
+        >
+          {restriction}
+        </p>
+      ))}
+    </div>
+  </div>
+</section>

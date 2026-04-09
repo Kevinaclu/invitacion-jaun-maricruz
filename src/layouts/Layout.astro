@@ -1,0 +1,127 @@
+---
+import "@fontsource/great-vibes";
+import "@fontsource-variable/playfair-display";
+import "@fontsource-variable/raleway";
+import "@fontsource-variable/cormorant-garamond";
+import { colors, meta } from "../config/wedding";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={meta.description} />
+    <meta name="author" content="Kevin Acosta Luna" />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:image" content={`${meta.siteUrl}${meta.ogImage}`} />
+    <meta property="og:url" content={meta.siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{meta.title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+  <script
+    defer
+    src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
+  ></script>
+  <script defer src="https://cdn.lordicon.com/lordicon.js"></script>
+</html>
+
+<style
+  define:vars={{
+    colorPrimary: colors.primary,
+    colorPrimaryLight: colors.primaryLight,
+    colorPrimaryDark: colors.primaryDark,
+    colorAccent: colors.accent,
+    colorBgWarm: colors.bgWarm,
+    colorBgOverlay: colors.bgOverlay,
+    colorTextDark: colors.textDark,
+    colorTextMuted: colors.textMuted,
+    colorBorder: colors.border,
+  }}
+>
+  :root {
+    --color-primary: var(--colorPrimary);
+    --color-primary-light: var(--colorPrimaryLight);
+    --color-primary-dark: var(--colorPrimaryDark);
+    --color-accent: var(--colorAccent);
+    --color-bg-warm: var(--colorBgWarm);
+    --color-text-dark: var(--colorTextDark);
+    --color-text-muted: var(--colorTextMuted);
+    --color-border: var(--colorBorder);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorBgWarm);
+    color: var(--colorTextDark);
+  }
+
+  /* Ornamental flourish — reusable via class */
+  .ornament::before,
+  .ornament::after {
+    content: "\2767";
+    display: inline-block;
+    font-size: 1.25rem;
+    color: var(--colorPrimaryLight);
+    opacity: 0.7;
+    vertical-align: middle;
+  }
+
+  .ornament::before {
+    margin-right: 1rem;
+    transform: scaleX(-1);
+  }
+
+  .ornament::after {
+    margin-left: 1rem;
+  }
+
+  /* Decorative divider line with animation on scroll */
+  .divider-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--colorPrimaryLight),
+      transparent
+    );
+    max-width: 10rem;
+    margin: 1.5rem auto;
+  }
+
+  /* Subtle texture overlay for warm sections */
+  .texture-overlay {
+    position: relative;
+  }
+
+  .texture-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8860B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: rgba(184, 134, 11, 0.2);
+    color: var(--colorTextDark);
+  }
+</style>

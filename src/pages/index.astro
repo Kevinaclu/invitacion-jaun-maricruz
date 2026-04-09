@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.svelte";
+import ClockSection from "../components/ClockSection.svelte";
+import Welcome from "../components/Welcome.astro";
+import ParentsSection from "../components/ParentsSection.astro";
+import GodParents from "../components/GodParents.astro";
+import ItinerarySection from "../components/ItinerarySection.svelte";
+import Locations from "../components/Locations.astro";
+import CodeDress from "../components/CodeDress.astro";
+import GiftSection from "../components/GiftSection.svelte";
+import Photo from "../components/Photo.svelte";
+import Intro from "../components/Intro.astro";
+import Confirmation from "../components/Confirmation.astro";
+import ImageGallery from "../components/ImageGallery.svelte";
+import { colors, couple } from "../config/wedding";
+---
+
+<Layout>
+  <Intro />
+  <HeroSection client:only="svelte" />
+
+  <div class="z-40 relative" style={`background-color: ${colors.bgWarm}`}>
+    <Welcome />
+  </div>
+
+  <ClockSection client:only="svelte" />
+  <ParentsSection />
+  <GodParents />
+  <ItinerarySection client:only="svelte" />
+  <Locations />
+
+  <!-- Transition quote -->
+  <div class="relative z-40 texture-overlay" style={`background-color: ${colors.bgWarm}`}>
+    <div class="relative z-10 max-w-lg mx-auto px-8 py-14 sm:py-16">
+      <p
+        class="text-center text-xl sm:text-2xl font-cormorant leading-relaxed italic intersect:motion-preset-fade-sm intersect-once"
+        style={`color: ${colors.textDark}`}
+      >
+        Que nos acompanes es lo mas importante, y si esta en tu disposicion
+        realizar una muestra de carino estaremos muy agradecidos
+      </p>
+      <div class="divider-line mt-6"></div>
+    </div>
+  </div>
+
+  <GiftSection client:only="svelte" />
+  <CodeDress />
+  <Photo client:only="svelte" />
+
+  <!-- CTA banner -->
+  <div class="relative z-40 overflow-hidden" style={`background-color: ${colors.primary}`}>
+    <div class="relative z-10 py-8 sm:py-10 px-6">
+      <p class="text-center text-white text-lg sm:text-xl font-cormorant tracking-wider leading-relaxed max-w-xl mx-auto">
+        Nos encantaria que nos acompanes en este dia tan especial
+      </p>
+    </div>
+  </div>
+
+  <div class="relative z-40">
+    <Confirmation />
+  </div>
+
+  <div class="relative z-40" style={`background-color: ${colors.bgWarm}`}>
+    <ImageGallery client:only="svelte" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="relative z-40 py-10 text-center" style={`background-color: ${colors.bgWarm}`}>
+    <p class="font-greatVibes text-3xl" style={`color: ${colors.primary}`}>
+      {couple.groomName} & {couple.brideName}
+    </p>
+    <div class="w-10 h-[1px] mx-auto my-4 opacity-30" style={`background-color: ${colors.primaryLight}`}></div>
+    <p class="font-raleway text-xs tracking-[0.3em] uppercase" style={`color: ${colors.textMuted}`}>
+      Con amor, los esperamos
+    </p>
+  </footer>
+</Layout>
