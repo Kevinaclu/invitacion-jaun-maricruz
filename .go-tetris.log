@@ -1,0 +1,8 @@
+2026/04/09 02:24:01 engine.go:57: Engine Start start
+2026/04/09 02:24:01 engine.go:29: Engine Run start
+2026/04/09 02:24:01 engine.go:123: Engine NewGame start
+2026/04/09 02:24:01 engine.go:143: Engine NewGame end
+2026/04/09 02:24:03 engine.go:86: Engine Start end
+2026/04/09 02:24:03 engine.go:52: Engine Run end
+2026/04/09 02:24:03 view.go:31: View Stop start
+2026/04/09 02:24:03 view.go:35: View Stop end
