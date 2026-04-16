@@ -17,7 +17,7 @@ import { colors, couple } from "../config/wedding";
 ---
 
 <Layout>
-  <Intro />
+  <Intro slot="intro" />
   <HeroSection client:only="svelte" />
 
   <div class="z-40 relative" style={`background-color: ${colors.bgWarm}`}>

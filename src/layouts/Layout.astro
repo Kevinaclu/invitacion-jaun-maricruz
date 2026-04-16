@@ -27,8 +27,26 @@ import { colors, meta } from "../config/wedding";
     <title>{meta.title}</title>
   </head>
   <body>
-    <slot />
+    <slot name="intro" />
+    <div class="invitation-container">
+      <slot />
+    </div>
   </body>
+  <script>
+    // Fix scroller fixed backgrounds to stay within the invitation container on wide screens
+    function fixScrollerLeft() {
+      const container = document.querySelector('.invitation-container');
+      if (!container || window.innerWidth <= 430) return;
+      const rect = container.getBoundingClientRect();
+      document.querySelectorAll('svelte-scroller-background-container').forEach(el => {
+        if (el.style.position === 'fixed') {
+          el.style.left = rect.left + 'px';
+        }
+      });
+    }
+    window.addEventListener('scroll', fixScrollerLeft);
+    window.addEventListener('resize', fixScrollerLeft);
+  </script>
   <script
     defer
     src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
@@ -70,8 +88,15 @@ import { colors, meta } from "../config/wedding";
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--colorBgWarm);
+    background-color: #E8DFD0;
     color: var(--colorTextDark);
+  }
+
+  .invitation-container {
+    max-width: 430px;
+    margin: 0 auto;
+    background-color: var(--colorBgWarm);
+    min-height: 100vh;
   }
 
   /* Ornamental flourish — reusable via class */

@@ -15,9 +15,9 @@
 
   <div
     slot="foreground"
-    class="w-full h-screen flex items-center justify-center flex-col backdrop-filter backdrop-brightness-[60%]"
+    class="w-full h-screen flex flex-col backdrop-filter backdrop-brightness-[60%]"
   >
-    <div class="flex flex-col items-center gap-3 px-6">
+    <div class="flex flex-col items-center gap-3 px-6 pt-32 mt-auto mb-auto">
       <p
         class="font-raleway text-white text-sm sm:text-base tracking-[0.4em] uppercase font-light"
         style="text-shadow: 0 1px 6px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.4);"
@@ -29,7 +29,7 @@
 
       <h1
         id="hero-title"
-        class="font-greatVibes text-center text-white text-7xl sm:text-8xl md:text-9xl motion-duration-2000 motion-delay-1000 leading-tight"
+        class="font-greatVibes text-center text-white text-5xl sm:text-6xl motion-duration-2000 motion-delay-1000 leading-tight"
         style="text-shadow: 0 4px 30px rgba(0,0,0,0.4);"
       >
         {couple.groomName} & {couple.brideName}
@@ -45,7 +45,7 @@
       </p>
     </div>
 
-    <div class="flex flex-grow items-end pb-20">
+    <div class="flex flex-grow items-end justify-center pb-20 w-full">
       <div class="flex flex-col items-center gap-2">
         <h2
           class="font-cormorant text-white text-2xl sm:text-3xl tracking-[0.3em] font-light"

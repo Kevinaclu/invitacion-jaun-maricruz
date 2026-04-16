@@ -24,9 +24,9 @@
     slot="foreground"
     class="w-full flex items-center flex-col backdrop-filter backdrop-brightness-[70%]"
   >
-    <div class="w-11/12 py-12 mx-auto">
+    <div class="py-12 px-4 mx-auto">
       <div
-        class="sm:w-1/2 mx-auto py-10 px-8 relative w-full z-40 rounded-sm border"
+        class="mx-auto py-10 px-6 relative w-full z-40 rounded-sm border"
         style="background-color: rgba(253, 248, 239, 0.95); border-color: {colors.primaryLight}; box-shadow: 0 8px 50px rgba(0,0,0,0.2);"
       >
         <div class="grid grid-cols-1 w-full mx-auto content-center">
