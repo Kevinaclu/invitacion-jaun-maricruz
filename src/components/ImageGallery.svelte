@@ -87,7 +87,7 @@
     ></div>
   </div>
 
-  <div id="gallery" class="masonry max-w-5xl mx-auto">
+  <div id="gallery" class="masonry">
     {#each visibleImages as img, i}
       <a
         href={img.src}
@@ -136,22 +136,9 @@
     column-gap: 0.75rem;
   }
 
-  @media (min-width: 640px) {
-    .masonry {
-      columns: 3;
-      column-gap: 1rem;
-    }
-  }
-
   .masonry-item {
     display: block;
     break-inside: avoid;
     margin-bottom: 0.75rem;
-  }
-
-  @media (min-width: 640px) {
-    .masonry-item {
-      margin-bottom: 1rem;
-    }
   }
 </style>
