@@ -10,7 +10,7 @@
   <div slot="background">
     <div
       class="bg-cover bg-center h-screen backdrop-filter backdrop-brightness-[50%] relative w-full z-40"
-      style="background-image: url('img/IMG_1836.webp');"
+      style="background-image: url('img/IMG_1836.webp'); background-color: #3a3025;"
     ></div>
   </div>
 

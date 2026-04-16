@@ -4,7 +4,7 @@
 
 <div
   class="relative w-full flex items-center flex-col text-white"
-  style="background-image: url('img/IMG_1802.webp'); background-size: cover; background-position: center;"
+  style="background-image: url('img/IMG_1802.webp'); background-size: cover; background-position: center; background-color: #3a3025;"
 >
   <div class="bg-black bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
   <div class="relative z-10 w-full flex flex-col items-center">

@@ -8,7 +8,7 @@
   <div slot="background">
     <div
       class="bg-cover bg-center h-[80vh] backdrop-filter backdrop-brightness-[75%] relative w-full z-40"
-      style="background-image: url('img/IMG_1964.webp');"
+      style="background-image: url('img/IMG_1964.webp'); background-color: #3a3025;"
     ></div>
   </div>
 
