@@ -1,13 +1,21 @@
 <script>
   export let title;
   export let names;
+  export let icon = "";
 
   import { colors } from "../config/wedding";
 </script>
 
 <div class="w-3/4 text-center mx-auto py-6 sm:py-8">
-  <div class="text-4xl mb-2 opacity-40" style="color: {colors.primary}">
-    &#10047;
+  <div
+    class="gp-icon mx-auto mb-2 opacity-60 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center"
+    style="color: {colors.primary}"
+  >
+    {#if icon}
+      {@html icon}
+    {:else}
+      <span class="text-4xl">&#10047;</span>
+    {/if}
   </div>
   <div class="mt-3">
     <h1
@@ -27,3 +35,10 @@
     {/each}
   </div>
 </div>
+
+<style>
+  .gp-icon :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+</style>

@@ -28,5 +28,10 @@
   "devDependencies": {
     "tailwindcss-intersect": "^2.0.1",
     "tailwindcss-motion": "^1.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "@libsql/hrana-client": "0.7.0"
+    }
   }
 }

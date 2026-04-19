@@ -43,33 +43,48 @@ export const weddingDate = {
 export const parents = {
   bride: {
     label: "Padres de la novia",
-    mother: "Nombre Apellido Apellido",
-    father: "Nombre Apellido Apellido",
+    mother: "Maria Adela Cota Leyva",
+    father: "Moises Gutierrez Valdez",
   },
   groom: {
     label: "Padres del novio",
-    mother: "Nombre Apellido Apellido",
-    father: "Nombre Apellido Apellido",
+    mother: "Luz Maria Sarmiento Luna",
+    father: "Roberto Galaviz Pacheco",
   },
 };
 
 // --- PADRINOS ---
+// El campo `icon` es un SVG inline que se renderiza en el carrusel.
 export const godparents = [
   {
-    title: "Velacion",
-    names: ["Nombre Apellido", "Nombre Apellido"],
-  },
-  {
-    title: "Lazo",
-    names: ["Nombre Apellido", "Nombre Apellido"],
-  },
-  {
-    title: "Arras",
-    names: ["Nombre Apellido", "Nombre Apellido"],
+    title: "Honor",
+    names: ["Griselda Medina", "Moises Cossio"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l4 4 5-7 5 7 4-4-2 12H5z"/><path d="M5 20h14"/><circle cx="12" cy="6" r="0.6" fill="currentColor"/><circle cx="3" cy="8" r="0.6" fill="currentColor"/><circle cx="21" cy="8" r="0.6" fill="currentColor"/></svg>`,
   },
   {
     title: "Anillos",
-    names: ["Nombre Apellido", "Nombre Apellido"],
+    names: ["Juan Carlos Apodaca", "Lizeth Toala"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="9" cy="15" r="5.5"/><circle cx="15" cy="15" r="5.5"/><path d="M9 4l1.5 2h3L15 4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  },
+  {
+    title: "Biblia",
+    names: ["Luis Karim Malvais", "Georgina de Malvais"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h12a2 2 0 0 1 2 2v14H7a2 2 0 0 0-2 2V4z"/><path d="M5 20a2 2 0 0 1 2-2h12"/><path d="M12 8v6M9.5 11h5"/></svg>`,
+  },
+  {
+    title: "Lazo",
+    names: ["Vladimir Ilich", "Tanehi Rodriguez"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-2.5 1.8-5 4.5-5S12 9.5 12 12s-1.8 5-4.5 5S3 14.5 3 12z"/><path d="M21 12c0-2.5-1.8-5-4.5-5S12 9.5 12 12s1.8 5 4.5 5S21 14.5 21 12z"/></svg>`,
+  },
+  {
+    title: "Arras",
+    names: ["Adrian Valdez", "Isaura Soto"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="10" r="5"/><circle cx="15" cy="15" r="5"/><path d="M7.5 10h3M9 8.5v3"/><path d="M13.5 15h3M15 13.5v3"/></svg>`,
+  },
+  {
+    title: "Primicias",
+    names: ["Juan Contreras", "Karina Malvais"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V5"/><path d="M12 9c-1.6-1.6-3.2-1.6-3.2-3.2 1.6 0 3.2 0 3.2 3.2z"/><path d="M12 9c1.6-1.6 3.2-1.6 3.2-3.2-1.6 0-3.2 0-3.2 3.2z"/><path d="M12 13c-1.6-1.6-3.2-1.6-3.2-3.2 1.6 0 3.2 0 3.2 3.2z"/><path d="M12 13c1.6-1.6 3.2-1.6 3.2-3.2-1.6 0-3.2 0-3.2 3.2z"/><path d="M12 17c-1.6-1.6-3.2-1.6-3.2-3.2 1.6 0 3.2 0 3.2 3.2z"/><path d="M12 17c1.6-1.6 3.2-1.6 3.2-3.2-1.6 0-3.2 0-3.2 3.2z"/></svg>`,
   },
 ];
 
