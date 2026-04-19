@@ -7,7 +7,7 @@
  */
 
 // --- PALETA DE COLORES ---
-// Cambia estos valores para modificar toda la paleta de la invitacion
+// Cambia estos valores para modificar toda la paleta de la invitación
 export const colors = {
   primary: "#B8860B", // Dorado oscuro - color principal
   primaryLight: "#D4A843", // Dorado claro - acentos
@@ -43,12 +43,12 @@ export const weddingDate = {
 export const parents = {
   bride: {
     label: "Padres de la novia",
-    mother: "Maria Adela Cota Leyva",
-    father: "Moises Gutierrez Valdez",
+    mother: "María Adela Cota Leyva",
+    father: "Moisés Gutiérrez Valdez",
   },
   groom: {
     label: "Padres del novio",
-    mother: "Luz Maria Sarmiento Luna",
+    mother: "Luz María Sarmiento Luna",
     father: "Roberto Galaviz Pacheco",
   },
 };
@@ -58,7 +58,7 @@ export const parents = {
 export const godparents = [
   {
     title: "Honor",
-    names: ["Griselda Medina", "Moises Cossio"],
+    names: ["Griselda Medina", "Moisés Cossio"],
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l4 4 5-7 5 7 4-4-2 12H5z"/><path d="M5 20h14"/><circle cx="12" cy="6" r="0.6" fill="currentColor"/><circle cx="3" cy="8" r="0.6" fill="currentColor"/><circle cx="21" cy="8" r="0.6" fill="currentColor"/></svg>`,
   },
   {
@@ -73,12 +73,12 @@ export const godparents = [
   },
   {
     title: "Lazo",
-    names: ["Vladimir Ilich", "Tanehi Rodriguez"],
+    names: ["Vladimir Ilich", "Tanehi Rodríguez"],
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-2.5 1.8-5 4.5-5S12 9.5 12 12s-1.8 5-4.5 5S3 14.5 3 12z"/><path d="M21 12c0-2.5-1.8-5-4.5-5S12 9.5 12 12s1.8 5 4.5 5S21 14.5 21 12z"/></svg>`,
   },
   {
     title: "Arras",
-    names: ["Adrian Valdez", "Isaura Soto"],
+    names: ["Adrián Valdez", "Isaura Soto"],
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="10" r="5"/><circle cx="15" cy="15" r="5"/><path d="M7.5 10h3M9 8.5v3"/><path d="M13.5 15h3M15 13.5v3"/></svg>`,
   },
   {
@@ -92,66 +92,59 @@ export const godparents = [
 export const itinerary = [
   {
     title: "Ceremonia Religiosa",
-    time: "6:00 PM",
+    time: "8:00 PM",
     icon: "https://cdn.lordicon.com/rlngnytn.json",
   },
   {
-    title: "Recepcion",
-    time: "8:00 PM",
-    icon: "https://cdn.lordicon.com/wxnxiano.json",
-  },
-  {
-    title: "Cena",
+    title: "Recepción",
     time: "9:00 PM",
-    icon: "https://cdn.lordicon.com/txqkxliv.json",
-  },
-  {
-    title: "Fiesta",
-    time: "10:00 PM",
-    icon: "https://cdn.lordicon.com/ohcuigqh.json",
+    icon: "https://cdn.lordicon.com/wxnxiano.json",
   },
 ];
 
 // --- UBICACIONES ---
 export const locations = {
-  ceremony: {
-    name: "Iglesia Placeholder",
-    address: "Direccion de la iglesia, Ciudad, Estado",
-    time: "6:00 PM",
-    mapUrl: "#",
-    imageUrl: "/img/placeholder-church.jpg",
-  },
   reception: {
-    name: "Salon Placeholder",
-    address: "Direccion del salon, Ciudad, Estado",
+    name: "Salón de eventos MAEVA",
+    address: "Blvd Canuto Ibarra Guerrero 181, Tepeca, 81229 Los Mochis, Sin.",
     time: "8:00 PM",
-    mapUrl: "#",
-    imageUrl: "/img/placeholder-salon.jpg",
+    mapUrl: "https://maps.app.goo.gl/AmawUejtD6yLhChQ6",
+    imageUrl: "/img/placeholder-salon.jpeg",
   },
 };
 
 // --- CODIGO DE VESTIMENTA ---
 export const dressCode = {
   type: "Formal",
-  restrictions: ["Mujeres: No blanco ni beige", "Respetuosamente NO NINOS"],
+  restrictions: ["Mujeres: No blanco ni beige", "Respetuosamente NO NIÑOS"],
 };
 
 // --- REGALO / TRANSFERENCIA ---
 export const giftInfo = {
   title: "Si deseas hacernos un obsequio",
   message:
-    "Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con nosotros, puedes hacerlo mediante transferencia electronica o en efectivo el dia del evento.",
+    "Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con nosotros, puedes hacerlo mediante transferencia electrónica o en efectivo el día del evento.",
   showTransfer: true,
-  bankName: "Banco Placeholder",
-  accountHolder: "Nombre del Titular",
-  clabe: "0000 0000 0000 000000",
-  cardNumber: "0000 0000 0000 0000",
+  bankName: "Nu México",
+  accountHolder: "Juan Roberto Galaviz Sarmiento",
+  clabe: "638180010179173195",
+};
+
+// --- CONTACTO DEL DISENADOR ---
+// Edita estos datos para que aparezcan en el footer de contacto.
+// El numero debe ir en formato internacional sin + ni espacios (ej: 5216681234567).
+export const designer = {
+  name: "Kevin Acosta",
+  ctaMessage: "¿Te gustaría una invitación como esta?",
+  whatsappNumber: "5216681234567",
+  whatsappMessage:
+    "¡Hola! Vi la invitación de Juan y Maricruz y me gustaría una para mi evento.",
 };
 
 // --- META TAGS / SEO ---
 export const meta = {
   title: `Nuestra Boda | ${couple.groomName} & ${couple.brideName}`,
-  description: `Invitacion de boda de ${couple.groomName} y ${couple.brideName}`,
+  description: `Invitación de boda de ${couple.groomName} y ${couple.brideName}`,
   ogImage:
     "https://faaffnfqghmgowdp.public.blob.vercel-storage.com/img-1423%20%281%29.jpg",
   siteUrl: "https://invitacion-jaun-maricruz.vercel.app",

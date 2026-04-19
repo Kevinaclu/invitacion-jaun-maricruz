@@ -4,28 +4,28 @@ import { colors, dressCode } from "../config/wedding";
 
 <section class="texture-overlay relative z-40" style={`background-color: ${colors.bgWarm}`}>
   <div class="relative z-10 text-center py-14 sm:py-16 px-6">
-    <p class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3" style={`color: ${colors.textMuted}`}>
+    <p class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3 intersect:motion-preset-blur-right-md intersect:motion-duration-1000 intersect-once" style={`color: ${colors.textMuted}`}>
       Etiqueta
     </p>
     <h3
-      class="text-5xl sm:text-6xl font-greatVibes intersect:motion-preset-fade-sm intersect-once"
+      class="text-5xl sm:text-6xl font-greatVibes intersect:motion-preset-blur-up-md intersect:motion-delay-200 intersect:motion-duration-1500 intersect-once"
       style={`color: ${colors.primary}`}
     >
-      Codigo de vestimenta
+      Código de vestimenta
     </h3>
     <div class="divider-line"></div>
 
     <div class="flex items-center flex-col gap-4 mt-8 max-w-sm mx-auto">
       <img
         src="/img/vestimenta.png"
-        alt="Imagen que indica el codigo de vestimenta formal"
+        alt="Imagen que indica el código de vestimenta formal"
         width={260}
         height={260}
-        class="opacity-90"
+        class="opacity-90 intersect:motion-preset-pop intersect:motion-delay-[400ms] intersect:motion-duration-1000 intersect-once"
         onerror="this.style.display='none'"
       />
       <p
-        class="text-3xl font-cormorant tracking-[0.2em] uppercase font-light mt-2"
+        class="text-3xl font-cormorant tracking-[0.2em] uppercase font-light mt-2 intersect:motion-preset-rebound-up intersect:motion-delay-[600ms] intersect:motion-duration-1000 intersect-once"
         style={`color: ${colors.textDark}`}
       >
         {dressCode.type}
@@ -33,9 +33,9 @@ import { colors, dressCode } from "../config/wedding";
 
       <div class="w-10 h-[1px] opacity-40 my-2" style={`background-color: ${colors.primaryLight}`}></div>
 
-      {dressCode.restrictions.map((restriction) => (
+      {dressCode.restrictions.map((restriction, i) => (
         <p
-          class="font-cormorant text-lg sm:text-xl leading-relaxed"
+          class={`font-cormorant text-lg sm:text-xl leading-relaxed intersect:motion-preset-blur-up-sm intersect:motion-duration-1000 intersect-once ${i === 0 ? "intersect:motion-delay-700" : "intersect:motion-delay-[900ms]"}`}
           style={`color: ${colors.textMuted}`}
         >
           {restriction}

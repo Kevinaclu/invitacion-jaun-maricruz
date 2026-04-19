@@ -31,29 +31,58 @@
       >
         <div class="grid grid-cols-1 w-full mx-auto content-center">
           <h1
-            class="text-center font-greatVibes py-2 text-4xl sm:text-5xl"
+            class="text-center font-greatVibes py-2 text-4xl sm:text-5xl intersect:motion-preset-blur-up-md intersect:motion-duration-1500 intersect-once"
             style="color: {colors.primary}"
           >
             {giftInfo.title}
           </h1>
 
-          <div class="w-10 h-[1px] mx-auto my-4 opacity-40" style="background-color: {colors.primaryLight}"></div>
+          <div
+            class="w-10 h-[1px] mx-auto my-4 opacity-40"
+            style="background-color: {colors.primaryLight}"
+          ></div>
 
-          <p class="text-center font-cormorant text-lg sm:text-xl leading-relaxed px-4" style="color: {colors.textDark}">
+          <p
+            class="text-center font-cormorant text-lg sm:text-xl leading-relaxed px-4 intersect:motion-preset-blur-right-md intersect:motion-delay-300 intersect:motion-duration-[1200ms] intersect-once"
+            style="color: {colors.textDark}"
+          >
             {giftInfo.message}
           </p>
 
           {#if giftInfo.showTransfer}
-            <div class="mt-8 border-t pt-8" style="border-color: {colors.primaryLight}40">
-              <p class="text-center font-raleway text-xs tracking-[0.3em] uppercase mb-5" style="color: {colors.textMuted}">
-                Transferencia Electronica
+            <div
+              class="mt-8 border-t pt-8 intersect:motion-preset-slide-up-md intersect:motion-delay-[400ms] intersect:motion-duration-[1200ms] intersect-once"
+              style="border-color: {colors.primaryLight}40"
+            >
+              <p
+                class="text-center font-raleway text-xs tracking-[0.3em] uppercase mb-5"
+                style="color: {colors.textMuted}"
+              >
+                Transferencia Electrónica
               </p>
 
-              <div class="space-y-3 text-center font-raleway text-sm sm:text-base" style="color: {colors.textDark}">
-                <p><span class="text-xs tracking-[0.2em] uppercase" style="color: {colors.textMuted}">Banco</span><br/>{giftInfo.bankName}</p>
-                <p><span class="text-xs tracking-[0.2em] uppercase" style="color: {colors.textMuted}">Titular</span><br/>{giftInfo.accountHolder}</p>
-                <p><span class="text-xs tracking-[0.2em] uppercase" style="color: {colors.textMuted}">CLABE</span><br/><span class="tracking-wider">{giftInfo.clabe}</span></p>
-                <p><span class="text-xs tracking-[0.2em] uppercase" style="color: {colors.textMuted}">Tarjeta</span><br/><span class="tracking-wider">{giftInfo.cardNumber}</span></p>
+              <div
+                class="space-y-3 text-center font-raleway text-sm sm:text-base"
+                style="color: {colors.textDark}"
+              >
+                <p>
+                  <span
+                    class="text-xs tracking-[0.2em] uppercase"
+                    style="color: {colors.textMuted}">Banco</span
+                  ><br />{giftInfo.bankName}
+                </p>
+                <p>
+                  <span
+                    class="text-xs tracking-[0.2em] uppercase"
+                    style="color: {colors.textMuted}">Titular</span
+                  ><br />{giftInfo.accountHolder}
+                </p>
+                <p>
+                  <span
+                    class="text-xs tracking-[0.2em] uppercase"
+                    style="color: {colors.textMuted}">CLABE</span
+                  ><br /><span class="tracking-wider">{giftInfo.clabe}</span>
+                </p>
               </div>
 
               <div class="flex justify-center mt-6">
@@ -62,23 +91,55 @@
                   class="font-raleway text-white py-2.5 px-7 rounded-full text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
                   style="background-color: {colors.primary}"
                 >
-                  {copied ? "Copiado!" : "Copiar CLABE"}
+                  {copied ? "¡Copiado!" : "Copiar CLABE"}
                 </button>
               </div>
             </div>
           {/if}
 
-          <div class="mt-8 border-t pt-8" style="border-color: {colors.primaryLight}40">
+          <div
+            class="mt-8 border-t pt-8"
+            style="border-color: {colors.primaryLight}40"
+          >
             <div class="text-center">
-              <p class="font-raleway text-xs tracking-[0.3em] uppercase mb-4" style="color: {colors.textMuted}">
+              <p
+                class="font-raleway text-xs tracking-[0.3em] uppercase mb-4 intersect:motion-preset-blur-right-md intersect:motion-duration-1000 intersect-once"
+                style="color: {colors.textMuted}"
+              >
                 O bien
               </p>
-              <h2 class="text-center font-cormorant text-2xl sm:text-3xl mb-3 tracking-wider" style="color: {colors.primary}">
+              <h2
+                class="text-center font-cormorant text-2xl sm:text-3xl mb-3 tracking-wider intersect:motion-preset-blur-up-md intersect:motion-delay-200 intersect:motion-duration-[1200ms] intersect-once"
+                style="color: {colors.primary}"
+              >
                 Lluvia de Sobres
               </h2>
-              <div class="text-5xl my-3 opacity-60" style="color: {colors.primary}">&#9993;</div>
-              <p class="font-cormorant text-base sm:text-lg px-4 italic leading-relaxed" style="color: {colors.textMuted}">
-                "La lluvia de sobres es la tradicion de regalar dinero en efectivo a los novios en un sobre el dia del evento"
+              <div
+                class="my-3 flex justify-center opacity-70 intersect:motion-preset-rebound-down intersect:motion-delay-[400ms] intersect:motion-duration-[1200ms] intersect-once"
+                style="color: {colors.primary}"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-12 h-12 sm:w-14 sm:h-14"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="1.5" />
+                  <path d="M3.5 6.5l8.5 7 8.5-7" />
+                  <path d="M3.5 17.5l6-5.5" />
+                  <path d="M20.5 17.5l-6-5.5" />
+                </svg>
+              </div>
+              <p
+                class="font-cormorant text-base sm:text-lg px-4 italic leading-relaxed intersect:motion-preset-blur-up-md intersect:motion-delay-[600ms] intersect:motion-duration-[1200ms] intersect-once"
+                style="color: {colors.textMuted}"
+              >
+                "La lluvia de sobres es la tradición de regalar dinero en
+                efectivo a los novios en un sobre el día del evento"
               </p>
             </div>
           </div>

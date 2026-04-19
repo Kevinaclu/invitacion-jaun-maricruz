@@ -48,7 +48,7 @@
     <div class="flex flex-col items-center min-w-[4.5rem] py-3 px-4 rounded-sm border border-white/20 backdrop-blur-md bg-white/[0.07]"
       style="box-shadow: 0 4px 30px rgba(0,0,0,0.15);">
       <span class="text-4xl sm:text-5xl font-light tabular-nums" style="text-shadow: 0 2px 10px rgba(0,0,0,0.4);">{days}</span>
-      <span class="text-xs tracking-[0.3em] uppercase mt-1 text-white/90">Dias</span>
+      <span class="text-xs tracking-[0.3em] uppercase mt-1 text-white/90">Días</span>
     </div>
     <div class="flex flex-col items-center min-w-[4.5rem] py-3 px-4 rounded-sm border border-white/20 backdrop-blur-md bg-white/[0.07]"
       style="box-shadow: 0 4px 30px rgba(0,0,0,0.15);">

@@ -58,22 +58,22 @@ import { colors } from "../config/wedding";
     <div class="max-w-md w-full">
       <div class="text-center mb-10">
         <p
-          class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3"
+          class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3 intersect:motion-preset-blur-right-md intersect:motion-duration-1000 intersect-once"
           style={`color: ${colors.textMuted}`}
         >
           RSVP
         </p>
-        <p class="font-greatVibes text-4xl sm:text-5xl" style={`color: ${colors.primary}`}>
+        <p class="font-greatVibes text-4xl sm:text-5xl intersect:motion-preset-blur-up-md intersect:motion-delay-200 intersect:motion-duration-1500 intersect-once" style={`color: ${colors.primary}`}>
           Confirma tu asistencia
         </p>
         <div class="divider-line"></div>
-        <p class="font-cormorant text-lg mt-2" style={`color: ${colors.textMuted}`}>
+        <p class="font-cormorant text-lg mt-2 intersect:motion-preset-blur-up-sm intersect:motion-delay-[400ms] intersect:motion-duration-1000 intersect-once" style={`color: ${colors.textMuted}`}>
           Te esperamos
         </p>
       </div>
 
       <form class="flex flex-col gap-6">
-        <div>
+        <div class="intersect:motion-preset-slide-up-md intersect:motion-delay-200 intersect:motion-duration-1000 intersect-once">
           <label class="font-raleway text-xs tracking-[0.25em] uppercase mb-2 block" style={`color: ${colors.textMuted}`}>
             Nombre
           </label>
@@ -85,7 +85,7 @@ import { colors } from "../config/wedding";
           />
         </div>
 
-        <div>
+        <div class="intersect:motion-preset-slide-up-md intersect:motion-delay-[400ms] intersect:motion-duration-1000 intersect-once">
           <label class="font-raleway text-xs tracking-[0.25em] uppercase mb-3 block" style={`color: ${colors.textMuted}`}>
             Asistencia
           </label>
@@ -99,16 +99,16 @@ import { colors } from "../config/wedding";
                 checked
                 class="radio-custom"
               />
-              <span class="font-cormorant text-lg" style={`color: ${colors.textDark}`}>Asistire</span>
+              <span class="font-cormorant text-lg" style={`color: ${colors.textDark}`}>Asistiré</span>
             </label>
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="radio" name="asistir" id="no-asistire" value="false" class="radio-custom" />
-              <span class="font-cormorant text-lg" style={`color: ${colors.textDark}`}>No asistire</span>
+              <span class="font-cormorant text-lg" style={`color: ${colors.textDark}`}>No asistiré</span>
             </label>
           </div>
         </div>
 
-        <div>
+        <div class="intersect:motion-preset-slide-up-md intersect:motion-delay-[600ms] intersect:motion-duration-1000 intersect-once">
           <label class="font-raleway text-xs tracking-[0.25em] uppercase mb-2 block" style={`color: ${colors.textMuted}`}>
             Mensaje
           </label>
@@ -117,14 +117,14 @@ import { colors } from "../config/wedding";
             rows="5"
             name="mensaje"
             id="mensaje"
-            placeholder="Dejale un mensaje a los novios!"
+            placeholder="¡Déjale un mensaje a los novios!"
           ></textarea>
         </div>
 
         <input
           type="submit"
           value="Enviar"
-          class="font-raleway text-xs tracking-[0.2em] uppercase px-8 py-3.5 rounded-full shadow-md active:scale-[0.98] transition-all duration-300 cursor-pointer text-white hover:shadow-lg mt-2"
+          class="font-raleway text-xs tracking-[0.2em] uppercase px-8 py-3.5 rounded-full shadow-md active:scale-[0.98] transition-all duration-300 cursor-pointer text-white hover:shadow-lg mt-2 intersect:motion-preset-pop intersect:motion-delay-[800ms] intersect:motion-duration-1000 intersect-once"
           style={`background-color: ${colors.primary}`}
         />
       </form>
@@ -152,7 +152,7 @@ import { colors } from "../config/wedding";
     const data = await response.text();
 
     if (data === "Comentario guardado") {
-      submitButton.value = "Gracias por tu confirmacion!";
+      submitButton.value = "¡Gracias por tu confirmación!";
       submitButton.disabled = true;
     }
   });

@@ -12,6 +12,7 @@ import GiftSection from "../components/GiftSection.svelte";
 import Photo from "../components/Photo.svelte";
 import Intro from "../components/Intro.astro";
 import Confirmation from "../components/Confirmation.astro";
+import DesignerContact from "../components/DesignerContact.astro";
 import ImageGallery from "../components/ImageGallery.svelte";
 import { colors, couple } from "../config/wedding";
 ---
@@ -34,11 +35,11 @@ import { colors, couple } from "../config/wedding";
   <div class="relative z-40 texture-overlay" style={`background-color: ${colors.bgWarm}`}>
     <div class="relative z-10 max-w-lg mx-auto px-8 py-14 sm:py-16">
       <p
-        class="text-center text-xl sm:text-2xl font-cormorant leading-relaxed italic intersect:motion-preset-fade-sm intersect-once"
+        class="text-center text-xl sm:text-2xl font-cormorant leading-relaxed italic intersect:motion-preset-blur-up-md intersect:motion-duration-1500 intersect-once"
         style={`color: ${colors.textDark}`}
       >
-        Que nos acompanes es lo mas importante, y si esta en tu disposicion
-        realizar una muestra de carino estaremos muy agradecidos
+        Que nos acompañes es lo más importante, y si está en tu disposición
+        realizar una muestra de cariño estaremos muy agradecidos
       </p>
       <div class="divider-line mt-6"></div>
     </div>
@@ -51,8 +52,8 @@ import { colors, couple } from "../config/wedding";
   <!-- CTA banner -->
   <div class="relative z-40 overflow-hidden" style={`background-color: ${colors.primary}`}>
     <div class="relative z-10 py-8 sm:py-10 px-6">
-      <p class="text-center text-white text-lg sm:text-xl font-cormorant tracking-wider leading-relaxed max-w-xl mx-auto">
-        Nos encantaria que nos acompanes en este dia tan especial
+      <p class="text-center text-white text-lg sm:text-xl font-cormorant tracking-wider leading-relaxed max-w-xl mx-auto intersect:motion-preset-blur-right-md intersect:motion-duration-[1200ms] intersect-once">
+        Nos encantaría que nos acompañes en este día tan especial
       </p>
     </div>
   </div>
@@ -67,12 +68,14 @@ import { colors, couple } from "../config/wedding";
 
   <!-- Footer -->
   <footer class="relative z-40 py-10 text-center" style={`background-color: ${colors.bgWarm}`}>
-    <p class="font-greatVibes text-3xl" style={`color: ${colors.primary}`}>
+    <p class="font-greatVibes text-3xl intersect:motion-preset-blur-up-md intersect:motion-duration-1500 intersect-once" style={`color: ${colors.primary}`}>
       {couple.groomName} & {couple.brideName}
     </p>
-    <div class="w-10 h-[1px] mx-auto my-4 opacity-30" style={`background-color: ${colors.primaryLight}`}></div>
-    <p class="font-raleway text-xs tracking-[0.3em] uppercase" style={`color: ${colors.textMuted}`}>
+    <div class="w-10 h-[1px] mx-auto my-4 opacity-30 intersect:motion-preset-expand intersect:motion-delay-300 intersect:motion-duration-1000 intersect-once" style={`background-color: ${colors.primaryLight}`}></div>
+    <p class="font-raleway text-xs tracking-[0.3em] uppercase intersect:motion-preset-blur-right-sm intersect:motion-delay-500 intersect:motion-duration-1000 intersect-once" style={`color: ${colors.textMuted}`}>
       Con amor, los esperamos
     </p>
   </footer>
+
+  <DesignerContact />
 </Layout>
