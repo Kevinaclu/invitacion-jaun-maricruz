@@ -17,10 +17,17 @@ import { colors, meta } from "../config/wedding";
     <meta property="og:title" content={meta.title} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:image" content={meta.ogImage} />
-    <meta property="og:url" content={meta.siteUrl} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image:secure_url" content={meta.ogImage} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={meta.description} />
+    <meta property="og:url" content={meta.siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={meta.ogImage} />
 
     <link
       rel="preload"
