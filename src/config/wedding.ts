@@ -9,16 +9,16 @@
 // --- PALETA DE COLORES ---
 // Cambia estos valores para modificar toda la paleta de la invitacion
 export const colors = {
-  primary: "#B8860B",       // Dorado oscuro - color principal
-  primaryLight: "#D4A843",  // Dorado claro - acentos
-  primaryDark: "#8B6914",   // Dorado muy oscuro - bordes
-  accent: "#C9A84C",        // Ambar dorado - botones y destacados
-  bgWarm: "#FDF8EF",        // Fondo crema calido
+  primary: "#B8860B", // Dorado oscuro - color principal
+  primaryLight: "#D4A843", // Dorado claro - acentos
+  primaryDark: "#8B6914", // Dorado muy oscuro - bordes
+  accent: "#C9A84C", // Ambar dorado - botones y destacados
+  bgWarm: "#FDF8EF", // Fondo crema calido
   bgOverlay: "rgba(139, 105, 20, 0.15)", // Overlay dorado sutil
-  textDark: "#2C2416",      // Texto oscuro con tono calido
-  textMuted: "#6B5D4D",     // Texto secundario
+  textDark: "#2C2416", // Texto oscuro con tono calido
+  textMuted: "#6B5D4D", // Texto secundario
   white: "#FFFFFF",
-  border: "#C9A84C",        // Bordes decorativos
+  border: "#C9A84C", // Bordes decorativos
 };
 
 // --- DATOS DE LOS NOVIOS ---
@@ -152,6 +152,7 @@ export const giftInfo = {
 export const meta = {
   title: `Nuestra Boda | ${couple.groomName} & ${couple.brideName}`,
   description: `Invitacion de boda de ${couple.groomName} y ${couple.brideName}`,
-  ogImage: "/img/og-image.jpg",
+  ogImage:
+    "https://invitacion-jaun-maricruz-git-main-kevinaclus-projects.vercel.app/img/og-image.jpg",
   siteUrl: "https://invitacion-juan-maricruz.vercel.app",
 };
