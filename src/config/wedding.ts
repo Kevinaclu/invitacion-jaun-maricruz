@@ -153,6 +153,6 @@ export const meta = {
   title: `Nuestra Boda | ${couple.groomName} & ${couple.brideName}`,
   description: `Invitacion de boda de ${couple.groomName} y ${couple.brideName}`,
   ogImage:
-    "https://faaffnfqghmgowdp.public.blob.vercel-storage.com/og-image.jpg",
+    "https://faaffnfqghmgowdp.public.blob.vercel-storage.com/img-1423%20%281%29.jpg",
   siteUrl: "https://invitacion-jaun-maricruz.vercel.app",
 };
