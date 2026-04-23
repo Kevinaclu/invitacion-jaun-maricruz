@@ -86,6 +86,11 @@ export const godparents = [
     names: ["Juan Contreras", "Karina Malvais"],
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V5"/><path d="M12 9c-1.6-1.6-3.2-1.6-3.2-3.2 1.6 0 3.2 0 3.2 3.2z"/><path d="M12 9c1.6-1.6 3.2-1.6 3.2-3.2-1.6 0-3.2 0-3.2 3.2z"/><path d="M12 13c-1.6-1.6-3.2-1.6-3.2-3.2 1.6 0 3.2 0 3.2 3.2z"/><path d="M12 13c1.6-1.6 3.2-1.6 3.2-3.2-1.6 0-3.2 0-3.2 3.2z"/><path d="M12 17c-1.6-1.6-3.2-1.6-3.2-3.2 1.6 0 3.2 0 3.2 3.2z"/><path d="M12 17c1.6-1.6 3.2-1.6 3.2-3.2-1.6 0-3.2 0-3.2 3.2z"/></svg>`,
   },
+  {
+    title: "Vela",
+    names: ["Olga Lugo", "Bizmark Urias"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.2 1.2-2 2.4-2 3.6 0 1.2.9 2.4 2 2.4s2-1.2 2-2.4C14 5.4 13.2 4.2 12 3z"/><rect x="9" y="10" width="6" height="10" rx="1"/><path d="M9 13h6"/><path d="M8 20h8"/></svg>`,
+  },
 ];
 
 // --- ITINERARIO ---
