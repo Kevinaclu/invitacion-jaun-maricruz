@@ -1,5 +1,12 @@
 ---
 import { colors, parents } from "../config/wedding";
+
+type Parent = { name: string; deceased: boolean };
+
+const renderName = (p: Parent) =>
+  p.deceased
+    ? `${p.name} <span class="inline-block align-middle ml-1.5 text-[0.7em]" style="color: ${colors.primaryDark}" aria-label="Q.E.P.D." title="Q.E.P.D.">✝</span>`
+    : p.name;
 ---
 
 <div
@@ -24,13 +31,9 @@ import { colors, parents } from "../config/wedding";
           >
             {parents.bride.label}
           </p>
-          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed">
-            {parents.bride.mother}
-          </p>
+          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed" set:html={renderName(parents.bride.mother)}></p>
           <p class="text-center font-cormorant text-lg my-1 italic" style={`color: ${colors.primaryLight}`}>&</p>
-          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed">
-            {parents.bride.father}
-          </p>
+          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed" set:html={renderName(parents.bride.father)}></p>
         </div>
 
         <div class="intersect:motion-preset-slide-up-left-md intersect:motion-delay-500 intersect:motion-duration-1000 intersect-once">
@@ -40,13 +43,9 @@ import { colors, parents } from "../config/wedding";
           >
             {parents.groom.label}
           </p>
-          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed">
-            {parents.groom.mother}
-          </p>
+          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed" set:html={renderName(parents.groom.mother)}></p>
           <p class="text-center font-cormorant text-lg my-1 italic" style={`color: ${colors.primaryLight}`}>&</p>
-          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed">
-            {parents.groom.father}
-          </p>
+          <p class="text-center font-cormorant text-2xl sm:text-3xl leading-relaxed" set:html={renderName(parents.groom.father)}></p>
         </div>
       </div>
     </div>

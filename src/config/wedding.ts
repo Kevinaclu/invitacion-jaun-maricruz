@@ -40,16 +40,17 @@ export const weddingDate = {
 };
 
 // --- PADRES ---
+// Marca `deceased: true` para mostrar una cruz junto al nombre.
 export const parents = {
   bride: {
     label: "Padres de la novia",
-    mother: "María Adela Cota Leyva",
-    father: "Moisés Gutiérrez Valdez",
+    mother: { name: "María Adela Cota Leyva", deceased: false },
+    father: { name: "Moisés Gutiérrez Valdez", deceased: true },
   },
   groom: {
     label: "Padres del novio",
-    mother: "Luz María Sarmiento Luna",
-    father: "Roberto Galaviz Pacheco",
+    mother: { name: "Luz María Sarmiento Luna", deceased: true },
+    father: { name: "Roberto Galaviz Pacheco", deceased: false },
   },
 };
 
