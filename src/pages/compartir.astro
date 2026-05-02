@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { colors, couple, weddingDate, locations, meta } from "../config/wedding";
+
+const shareMessage = `✨ *¡Nos casamos!* ✨
+
+_"Por tanto, lo que Dios unió, no lo separe el hombre."_
+— Marcos 10:9 📖
+
+Con la bendición de Dios y de nuestros padres, queremos compartir contigo uno de los días más importantes de nuestras vidas.
+
+👰🤵 *${couple.groomName} & ${couple.brideName}*
+📅 ${weddingDate.displayDay} ${weddingDate.displayDate}
+🕗 ${weddingDate.displayTime}
+📍 ${locations.reception.name}
+
+Tu presencia es muy especial para nosotros. Te invitamos a ver todos los detalles en nuestra invitación digital 👇
+
+🔗 ${meta.siteUrl}
+
+Por favor confírmanos tu asistencia desde la misma invitación. ¡Nos encantará celebrar contigo este día tan único! 💛`;
+---
+
+<Layout>
+  <div
+    class="texture-overlay relative w-full min-h-screen z-30"
+    style={`background-color: ${colors.bgWarm}; color: ${colors.textDark}`}
+  >
+    <div class="relative z-10 px-6 py-14 sm:py-20 max-w-2xl mx-auto">
+      <header class="text-center">
+        <p
+          class="font-raleway text-xs sm:text-sm tracking-[0.35em] uppercase mb-3"
+          style={`color: ${colors.textMuted}`}
+        >
+          Compartir invitación
+        </p>
+        <h1
+          class="font-greatVibes text-5xl sm:text-6xl"
+          style={`color: ${colors.primary}`}
+        >
+          Mensaje para WhatsApp
+        </h1>
+        <div class="divider-line"></div>
+        <p
+          class="font-cormorant italic text-base sm:text-lg"
+          style={`color: ${colors.textMuted}`}
+        >
+          Copia este mensaje y compártelo con tus invitados.
+        </p>
+      </header>
+
+      <section
+        class="mt-8 rounded-sm border border-double p-6 sm:p-8"
+        style={`background-color: ${colors.white}; border-color: ${colors.primary}`}
+      >
+        <pre
+          id="share-message"
+          class="font-raleway whitespace-pre-wrap break-words text-sm sm:text-base leading-relaxed rounded-sm border p-4 sm:p-5 max-h-[60vh] overflow-y-auto"
+          style={`background-color: ${colors.bgWarm}; border-color: ${colors.primaryLight}; color: ${colors.textDark}`}
+        >{shareMessage}</pre>
+
+        <div class="mt-5 flex flex-col sm:flex-row gap-3 justify-center">
+          <button
+            id="copy-btn"
+            type="button"
+            class="font-raleway text-xs sm:text-sm tracking-[0.25em] uppercase px-6 py-3 rounded-sm border-2 transition-all duration-300 hover:opacity-90"
+            style={`background-color: ${colors.primary}; color: ${colors.white}; border-color: ${colors.primary}`}
+          >
+            <span id="copy-label">Copiar mensaje</span>
+          </button>
+          <a
+            id="whatsapp-btn"
+            href="#"
+            class="font-raleway text-xs sm:text-sm tracking-[0.25em] uppercase px-6 py-3 rounded-sm border-2 text-center transition-all duration-300 hover:opacity-90"
+            style={`background-color: transparent; color: ${colors.primary}; border-color: ${colors.primary}`}
+          >
+            Abrir en WhatsApp
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const pre = document.getElementById("share-message");
+  const message = pre?.textContent ?? "";
+
+  const wa = document.getElementById("whatsapp-btn") as HTMLAnchorElement | null;
+  if (wa) wa.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+
+  const btn = document.getElementById("copy-btn");
+  const label = document.getElementById("copy-label");
+  btn?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(message);
+      if (label) {
+        const original = label.textContent;
+        label.textContent = "¡Copiado!";
+        setTimeout(() => {
+          if (label) label.textContent = original;
+        }, 1800);
+      }
+    } catch {
+      const range = document.createRange();
+      if (pre) {
+        range.selectNodeContents(pre);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+      }
+    }
+  });
+</script>
