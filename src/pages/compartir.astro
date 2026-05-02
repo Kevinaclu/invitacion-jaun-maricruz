@@ -19,6 +19,8 @@ Tu presencia es muy especial para nosotros. Te invitamos a ver todos los detalle
 🔗 ${meta.siteUrl}
 
 Por favor confírmanos tu asistencia desde la misma invitación. ¡Nos encantará celebrar contigo este día tan único! 💛`;
+
+const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`;
 ---
 
 <Layout>
@@ -70,7 +72,9 @@ Por favor confírmanos tu asistencia desde la misma invitación. ¡Nos encantar�
           </button>
           <a
             id="whatsapp-btn"
-            href="#"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             class="font-raleway text-xs sm:text-sm tracking-[0.25em] uppercase px-6 py-3 rounded-sm border-2 text-center transition-all duration-300 hover:opacity-90"
             style={`background-color: transparent; color: ${colors.primary}; border-color: ${colors.primary}`}
           >
@@ -82,13 +86,8 @@ Por favor confírmanos tu asistencia desde la misma invitación. ¡Nos encantar�
   </div>
 </Layout>
 
-<script>
+<script define:vars={{ message: shareMessage }}>
   const pre = document.getElementById("share-message");
-  const message = pre?.textContent ?? "";
-
-  const wa = document.getElementById("whatsapp-btn") as HTMLAnchorElement | null;
-  if (wa) wa.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
-
   const btn = document.getElementById("copy-btn");
   const label = document.getElementById("copy-label");
   btn?.addEventListener("click", async () => {
