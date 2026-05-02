@@ -91,6 +91,18 @@ import { colors, couple } from "../config/wedding";
 </div>
 
 <script>
+  // Bloquea el scroll antes de abrir la invitación sin tocar overflow
+  // (cambiar overflow rompe la medición de svelte-scroller / parallax).
+  const blockScroll = (e: Event) => e.preventDefault();
+  const blockKeys = (e: KeyboardEvent) => {
+    const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " ", "Spacebar"];
+    if (keys.includes(e.key)) e.preventDefault();
+  };
+  window.addEventListener("wheel", blockScroll, { passive: false });
+  window.addEventListener("touchmove", blockScroll, { passive: false });
+  window.addEventListener("keydown", blockKeys, { passive: false });
+  window.scrollTo(0, 0);
+
   document.getElementById("entry-point")?.addEventListener("click", () => {
     document
       .getElementById("letter-rigth")
@@ -110,6 +122,9 @@ import { colors, couple } from "../config/wedding";
 
     document.getElementById("hero-title")?.classList.add("motion-preset-fade");
 
+    window.removeEventListener("wheel", blockScroll);
+    window.removeEventListener("touchmove", blockScroll);
+    window.removeEventListener("keydown", blockKeys);
     document.body.classList.add("overflow-y-scroll");
   });
 </script>

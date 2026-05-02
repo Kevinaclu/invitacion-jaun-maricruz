@@ -3,10 +3,10 @@ import { colors, parents } from "../config/wedding";
 
 type Parent = { name: string; deceased: boolean };
 
+const crossSvg = `<svg viewBox="0 0 24 24" class="inline-block align-middle ml-1.5 w-[0.7em] h-[0.7em]" style="color: ${colors.primaryDark}" fill="currentColor" aria-label="Q.E.P.D." role="img"><title>Q.E.P.D.</title><path d="M10 2h4v6h6v4h-6v10h-4V12H4V8h6z"/></svg>`;
+
 const renderName = (p: Parent) =>
-  p.deceased
-    ? `${p.name} <span class="inline-block align-middle ml-1.5 text-[0.7em]" style="color: ${colors.primaryDark}" aria-label="Q.E.P.D." title="Q.E.P.D.">✝</span>`
-    : p.name;
+  p.deceased ? `${p.name} ${crossSvg}` : p.name;
 ---
 
 <div
