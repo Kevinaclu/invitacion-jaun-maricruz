@@ -142,7 +142,7 @@ export const giftInfo = {
 export const designer = {
   name: "Kevin Acosta",
   ctaMessage: "¿Te gustaría una invitación como esta?",
-  whatsappNumber: "5216681234567",
+  whatsappNumber: "5216682272828",
   whatsappMessage:
     "¡Hola! Vi la invitación de Juan y Maricruz y me gustaría una para mi evento.",
 };
