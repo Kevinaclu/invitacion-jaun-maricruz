@@ -1,6 +1,6 @@
 ---
 import GodParentsCarousel from "./GodParentsCarousel.svelte";
-import { colors } from "../config/wedding";
+import { colors, pastors } from "../config/wedding";
 ---
 
 <div class="z-40 relative overflow-hidden" style={`background-color: ${colors.primary}`}>
@@ -17,6 +17,38 @@ import { colors } from "../config/wedding";
 <div class="z-40 relative texture-overlay" style={`background-color: ${colors.bgWarm}`}>
   <div class="relative z-10 pt-14 sm:pt-16 pb-6">
     <div class="max-w-lg mx-auto text-center">
+      <p
+        class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3 intersect:motion-preset-blur-right-md intersect:motion-duration-1000 intersect-once"
+        style={`color: ${colors.textMuted}`}
+      >
+        {pastors.label}
+      </p>
+      <h1
+        class="text-center font-greatVibes text-6xl sm:text-7xl intersect:motion-preset-blur-up-md intersect:motion-delay-200 intersect:motion-duration-1500 intersect-once"
+        style={`color: ${colors.primary}`}
+      >
+        Pastores
+      </h1>
+      <div class="divider-line"></div>
+      <p
+        class="font-cormorant text-2xl sm:text-3xl leading-relaxed intersect:motion-preset-blur-up-md intersect:motion-delay-200 intersect:motion-duration-1000 intersect-once mt-6"
+        style={`color: ${colors.textDark}`}
+      >
+        {pastors.names[0]}
+      </p>
+      <p
+        class="font-cormorant text-lg my-1 italic intersect:motion-preset-blur-up-md intersect:motion-delay-300 intersect:motion-duration-1000 intersect-once"
+        style={`color: ${colors.primaryLight}`}
+      >&</p>
+      <p
+        class="font-cormorant text-2xl sm:text-3xl leading-relaxed intersect:motion-preset-blur-up-md intersect:motion-delay-[400ms] intersect:motion-duration-1000 intersect-once"
+        style={`color: ${colors.textDark}`}
+      >
+        {pastors.names[1]}
+      </p>
+    </div>
+
+    <div class="max-w-lg mx-auto text-center mt-12">
       <p class="font-raleway text-xs sm:text-sm tracking-[0.3em] uppercase mb-3 intersect:motion-preset-blur-right-md intersect:motion-duration-1000 intersect-once" style={`color: ${colors.textMuted}`}>
         Acompañados por
       </p>

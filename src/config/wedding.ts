@@ -119,6 +119,12 @@ export const locations = {
   },
 };
 
+// --- PASTORES ---
+export const pastors = {
+  label: "Ceremonia oficiada por",
+  names: ["Isaac Flores", "Chenny Rábago"],
+};
+
 // --- CODIGO DE VESTIMENTA ---
 export const dressCode = {
   type: "Formal",
