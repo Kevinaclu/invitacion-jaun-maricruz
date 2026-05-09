@@ -122,7 +122,7 @@ export const locations = {
 // --- PASTORES ---
 export const pastors = {
   label: "Ceremonia oficiada por",
-  names: ["Isaac Flores", "Chenny Rábago"],
+  names: ["Isaac Flores", "Chenny Flores"],
 };
 
 // --- CODIGO DE VESTIMENTA ---
